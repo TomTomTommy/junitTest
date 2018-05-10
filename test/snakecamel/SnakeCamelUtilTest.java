@@ -10,7 +10,7 @@ public class SnakeCamelUtilTest {
 	@Test
 	public void ＿の入った文字列を区切り頭の文字を大文字にするテスト() {
 		SnakeCamelUtil scu = new SnakeCamelUtil();
-		String expected = "Abc";
+		String expected = "AbcDef";
 		String actual= scu.snakeToCamelcase("abc_def");
 		assertThat(actual, is(expected));
 	}
@@ -18,16 +18,16 @@ public class SnakeCamelUtilTest {
 	@Test
 	public void 大文字をさがして小文字と_をつけるテスト() {
 		SnakeCamelUtil scu = new SnakeCamelUtil();
-		String expected = "aAb_cC";
-		String actual= scu.camelToSnakecase("AbC");
+		String expected = "abc_def";
+		String actual= scu.camelToSnakecase("AbcDef");
 		assertThat(actual, is(expected));
 	}
 	
 	@Test
 	public void 最初の小文字を大文字にするテスト() {
 		SnakeCamelUtil scu = new SnakeCamelUtil();
-		String expected = "Abc_def";
-		String actual= scu.capitalize("abc_def");
+		String expected = "Xyz";
+		String actual= scu.capitalize("xyz");
 		assertThat(actual, is(expected));
 	}
 	
